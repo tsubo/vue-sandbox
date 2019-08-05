@@ -9,6 +9,8 @@ Docker の実行環境がインストールしてあること
 
 ## インストール
 
+PC 上で...
+
 ```
 $ git clone https://github.com/tsubotak/vue-sandbox.git
 $ cd vue-sandbox
@@ -22,13 +24,13 @@ $ docker-compose up -d
 $ docker-compose ps
       Name                    Command              State           Ports
 ---------------------------------------------------------------------------------
-vue-sandbox_web_1   docker-entrypoint.sh /bin/sh   Up      0.0.0.0:8080->8080/tcp
+vue-sandbox_app_1   docker-entrypoint.sh /bin/sh   Up      0.0.0.0:8080->8080/tcp
 ```
 
 ## コンテナへのログインと Vue CLI3 プロジェクトの作成
 
 ```
-$ docker-compose exec web /bin/sh
+$ docker-compose exec app /bin/sh
 # pwd
 /app
 
@@ -52,7 +54,7 @@ $ docker-compose exec web /bin/sh
 
 ### Vue プロジェクト上でのプログラミング
 
-ホスト PC 上の `vue-sandbox/vue-tutorial` ディレクトリ内のファイルをエディタで編集すると、リアルタイムで変更内容がウェブブラウザに反映されます。
+ホスト PC 上の `vue-sandbox/app/vue-tutorial` ディレクトリ内のファイルをエディタで編集すると、リアルタイムで変更内容がウェブブラウザに反映されます。
 
 ### コンテナの終了
 
